@@ -1,0 +1,70 @@
+<html lang="ja">
+
+<head>
+  <link href="style.seiza.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <!--ファビコン-->
+  <link rel="shortcut icon" href="img/orion.ico">
+  <title>星座問題</title>
+  <script type="text/javascript" src="style.js"></script>
+  <script src="./jquery-3.6.0.min.js"></script>
+</head>
+
+<body onLoad="img_load();">
+
+　<!--問題の色-->
+  <table align="center" bgcolor="#800080" cellpadding=7 border=1>
+   <tr><td align="center">
+    <form name="form1">
+     <input type=text size=50 name=text1>
+     <br><br>
+      <!--星座の画像-->
+      <div id="seiza">
+       <a href="javaScript:colors(0);"><img src="img/ohituzi.gif" name="0" border="0"></a>
+         <a href="javaScript:colors(1);"><img src="img/ousi.gif" name="1" border="0"></a>
+         <a href="javaScript:colors(2);"><img src="img/hutago.gif" name="2" border="0"></a>
+         <a href="javaScript:colors(3);"><img src="img/kani.gif" name="3" border="0"></a>
+         <a href="javaScript:colors(4);"><img src="img/sisi.gif" name="4" border="0"></a>
+         <a href="javaScript:colors(5);"><img src="img/otome.gif" name="5" border="0"></a><br>
+         <a href="javaScript:colors(6);"><img src="img/tenbin.gif" name="6" border="0"></a>
+         <a href="javaScript:colors(7);"><img src="img/sasori.gif" name="7" border="0"></a>
+         <a href="javaScript:colors(8);"><img src="img/ite.gif" name="8" border="0"></a>
+         <a href="javaScript:colors(9);"><img src="img/yagi.gif" name="9" border="0"></a>
+         <a href="javaScript:colors(10);"><img src="img/mizugame.gif" name="10" border="0"></a>
+         <a href="javaScript:colors(11);"><img src="img/uo.gif" name="11" border="0"></a>
+      </div>
+      <hr width="55%">
+     <!--最初に戻る-->
+     <input type="button" value="スタート" onClick="hajime();">
+     <img src="" name="hidden" width="1" height="1" border="0">
+    </form>
+   </td></tr>
+  </table>
+  
+  <!--星の画像-->
+  <div id="hosi">
+    <img src="img/hosi.png" alt="hosi">
+  </div>
+
+  <!--星の初期位置-->
+  <style>
+    #hosi{
+      position: absolute;
+      top: 250px;
+      left: 590px;
+    }
+  </style> 
+
+　<!--星の移動-->
+  <script>
+    $(document).click(function(e) {
+    $("#hosi").animate({
+      left: e.pageX + "px",
+      top: e.pageY + "px"
+    }, "normal", "swing");
+　  })
+  </script>
+
+</body>
+
+</html>
